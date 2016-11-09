@@ -15,6 +15,8 @@ admin.autodiscover()
 router = routers.DefaultRouter()
 router.register(r'rest/users', it_viewsets.UserViewSet)
 router.register(r'rest/issues', it_viewsets.IssueViewSet)
+router.register(r'rest/issue', it_viewsets.IssueViewSetRO)
+router.register(r'rest/issue/(?P<pk>\d+)/$', it_viewsets.IssueViewSetSingle)
 
 urlpatterns = patterns(
     '',
