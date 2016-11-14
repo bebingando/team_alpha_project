@@ -26,3 +26,16 @@ class IssueSerializer(serializers.HyperlinkedModelSerializer):
             'modified_date',
             'closed_date'
             )
+        
+# Add a comment serializer to convert model data to python datatypes
+class CommentSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = it_models.IssueComment
+        fields = (
+            'pk',
+           'comment',
+           'issue_id',
+           'date',
+           'poster'
+           'is_comment'
+        )

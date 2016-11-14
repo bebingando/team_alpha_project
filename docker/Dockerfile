@@ -30,6 +30,8 @@ RUN python manage.py makemigrations
 # run database migration
 RUN python manage.py migrate
 
+# run database population
+RUN python manage.py populate_demo_data --issues 50 --projects 5
+
 # set default entry point to run server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-
